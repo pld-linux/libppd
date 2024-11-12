@@ -63,6 +63,7 @@ generating PPD files from *.drv files.
 
 %build
 %configure \
+	--disable-silent-rules \
 	%{!?with_static_libs:--disable-static} \
 	--enable-ppdc-utils \
 	--enable-testppdfile \
