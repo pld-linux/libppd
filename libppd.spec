@@ -12,10 +12,15 @@ Source0:	https://github.com/OpenPrinting/libppd/releases/download/%{version}/%{n
 # Source0-md5:	50ff86121525cf3c477c8246aad26eaa
 URL:		https://github.com/OpenPrinting/libppd
 BuildRequires:	cups-devel
-BuildRequires:	ghostscript
 BuildRequires:	libcupsfilters-devel
-BuildRequires:	mupdf
-BuildRequires:	poppler-progs
+BuildRequires:	libstdc++-devel >= 6:8
+BuildRequires:	pkgconfig >= 1:0.20
+BuildRequires:	tar >= 1:1.22
+BuildRequires:	xz
+BuildRequires:	zlib-devel
+Suggests:	ghostscript
+Suggests:	mupdf
+Suggests:	poppler-progs
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -67,7 +72,11 @@ generating PPD files from *.drv files.
 	%{!?with_static_libs:--disable-static} \
 	--enable-ppdc-utils \
 	--enable-testppdfile \
-	--with-pdftops=hybrid
+	--with-gs-path=/usr/bin/gs \
+	--with-mutool-path=/usr/bin/mutool \
+	--with-pdftocairo-path=/usr/bin/pdftocairo \
+	--with-pdftops=hybrid \
+	--with-pdftops-path=/usr/bin/pdftops
 
 %{__make}
 
