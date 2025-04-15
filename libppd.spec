@@ -4,12 +4,12 @@
 #
 Summary:	Library for retro-fitting legacy printer drivers
 Name:		libppd
-Version:	2.1.0
+Version:	2.1.1
 Release:	1
 License:	Apache v2.0 with GPL v2 LGPL v2 Exception
 Group:		Libraries
 Source0:	https://github.com/OpenPrinting/libppd/releases/download/%{version}/%{name}-%{version}.tar.xz
-# Source0-md5:	50ff86121525cf3c477c8246aad26eaa
+# Source0-md5:	65accc86f9956a1160937b14e0f516a6
 URL:		https://github.com/OpenPrinting/libppd
 BuildRequires:	cups-devel
 BuildRequires:	libcupsfilters-devel
