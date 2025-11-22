@@ -114,14 +114,13 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS COPYING NEWS README.md
+%doc AUTHORS CHANGES.md COPYING README.md
 %attr(755,root,root) %{_libdir}/libppd.so.*.*.*
 %ghost %{_libdir}/libppd.so.2
 %{_datadir}/ppdc
 
 %files devel
 %defattr(644,root,root,755)
-%doc CHANGES.md
 %{_libdir}/libppd.so
 %{_includedir}/ppd
 %{_pkgconfigdir}/libppd.pc
